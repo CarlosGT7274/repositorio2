@@ -16,7 +16,7 @@ export default function Home() {
                 <div className="max-w-md mx-auto my-4" >
                     <h1 className=" underline underline-offset-8 my-3 font-bold text-xl dark:text-white">Trabajo</h1>
                     <p className=" text-justify indent-4 dark:text-white ">
-                        Desarrollo software a medida y aplicaciones de escritorio, trabajando para transformar ideas y necesidades en soluciones efectivas y funcionales. Mi enfoque está en entender a fondo los requerimientos de cada proyecto para crear aplicaciones que mejoren la eficiencia y optimicen los procesos. Utilizo una variedad de tecnologías y metodologías para asegurar que el software que entrego cumpla con los más altos estándares de calidad. Mi objetivo es proporcionar soluciones personalizadas que se adapten a las necesidades específicas de cada cliente, brindando un soporte continuo para garantizar el éxito y la satisfacción.
+                        Desarrollo software a medida y aplicaciones de escritorio. Mi enfoque está en entender a fondo los requerimientos de cada proyecto para crear aplicaciones que mejoren la eficiencia y optimicen los procesos. Utilizo una variedad de tecnologías y metodologías para asegurar que el software que entrego cumpla con los más altos estándares de calidad.
                     </p>
                 </div>
                 <div className=' max-w-md mx-auto flex justify-center p-4' >
