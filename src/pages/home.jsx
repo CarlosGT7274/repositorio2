@@ -3,6 +3,7 @@ import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
 import intescLogo from "../../public/images/intesc.png"
+import instescPdf from "../../public/pdf/Carta de recomendacion.pdf"
 import xube from "../../public/images/xube-modified.png"
 import cufrisa from "../../public/images/cufrisa logo.webp"
 
@@ -55,7 +56,7 @@ export default function Home() {
             </div>
             </a>
 
-            <a className=" block" href="/public/pdf/Carta de recomendacion.pdf" target="_blank" >
+            <a className=" block" href={instescPdf} target="_blank" >
             <div className=" px-4 py-2 dark:bg-dark dark:text-white bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-gray-400 ">
                 <div className=" inline-flex items-center gap-4">
                   <img className="size-8" src={intescLogo} alt=""/>
