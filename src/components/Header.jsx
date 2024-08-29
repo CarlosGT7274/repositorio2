@@ -44,7 +44,7 @@ export default function Header() {
                             className={`hover:underline underline-offset-4 p-2 ${location.pathname === '/Proyectos' ? 'bg-verdeazulclaro' : ''}`} >
                             Proyectos
                         </a>
-                        <a href="#" className='hover:underline underline-offset-4 ' >Sobre mi</a>
+                        
 
                         <div className="button-icon border-[3px] border-white dark:border-[#222229] ">
                               <div className="icon bg-white dark:bg-[#222229] ">
