@@ -5,6 +5,9 @@ import ThreeScene from '../lib/model.jsx'
 import ecommerce from '../../public/images/ecomerce.png'
 import hr from '../../public/images/hr.jpg'
 
+import crud from '../../public/images/crud.png'
+import rh from '../../public/images/hr.jpg'
+
 export default function Proyectos() {
     return (
     <>
@@ -15,8 +18,8 @@ export default function Proyectos() {
                 </div>
                 <div className="max-w-md mx-auto my-4" >
                     <h1 className=" my-3 font-bold text-xl dark:text-white">Trabajo</h1>
-                    <div className="flex flex-wrap " >
-                       <div className="flex-[50%]  max-w-[50%] px-4" >
+                    <div className="grid grid-cols-2 " >
+                       <div className="px-4 grid grid-rows-2 " >
                             <div className="py-6 ">
                                 <img src={ ecommerce } alt="" />
                                 <h1 className=" dark:text-white  text-center py-2" >
@@ -27,11 +30,14 @@ export default function Proyectos() {
                                 </p>
                             </div>
 
-                            <div>
-                                hola3
+                            <div className="px-4" >
+                                <img src={ crud } alt="" />
+                                <h1 className="dark:text-white  text-center py-2">
+                                    Crud
+                                </h1>
                             </div>
                        </div> 
-                       <div className="flex-[50%]  max-w-[50%] px-4" >
+                       <div className=" px-4 grid grid-rows-2 " >
                             <div className="py-6">
                                 <img src={ hr } alt="" />
                                 <h1 className=" dark:text-white text-center py-2" >
@@ -41,8 +47,8 @@ export default function Proyectos() {
                                     Control de Recursos Humanos
                                 </p>
                             </div>
-                            <div>
-                                hola4
+                            <div className=" px-4">
+                                <img src={ rh } alt="" />
                             </div>
                        </div>
                     </div>

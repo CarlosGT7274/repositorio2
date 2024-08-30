@@ -43,6 +43,7 @@ export default function Home() {
           <h3 className="underline-offset-8 underline font-bold text-xl">Experiencia</h3>
 
           <div className="space-y-4" >
+
             <a className=" block" href="">
             <div className=" px-4 py-2 dark:bg-dark dark:text-white  bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-gray-400 ">
                 <div className=" inline-flex items-center gap-4">
