@@ -18,7 +18,7 @@ export default function Proyectos() {
         <div className=" max-w-md mx-auto h-[calc(100vh_-_60vh)] ">
           <ThreeScene />
         </div>
-        <div className="max-w-lg mx-auto my-4">
+        <div className="max-w-md mx-auto my-4">
           <h1 className=" my-3 font-bold text-xl dark:text-white">Trabajos</h1>
 
           <div className="grid lg:grid-cols-2 gap-6">
@@ -65,7 +65,7 @@ export default function Proyectos() {
           </div>
         </div>
 
-        <div className="max-w-lg mx-auto my-4">
+        <div className="max-w-md mx-auto my-4">
           <h1 className=" my-3 font-bold text-xl dark:text-white">
             Colaboraciones
           </h1>
