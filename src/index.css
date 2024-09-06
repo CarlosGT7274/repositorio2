@@ -16,19 +16,19 @@
 
 .icon {
 /*  background-color: #fff;*/
-  padding: 10px 10px 5px 10px;
+  padding: 7px 10px 5px 10px;
 }
 
 .icon svg {
-  width: 25px;
-  height: 25px;
+  width: 17px;
+  height: 17px;
 }
 
 .cube {
   transition: all 0.4s;
   transform-style: preserve-3d;
   width: 200px;
-  height: 20px;
+  height: 10px;
 }
 
 .button-icon:hover .cube {
@@ -37,7 +37,7 @@
 
 .side {
   position: absolute;
-  height: 47px;
+  height: 37px;
   width: 200px;
   display: flex;
   font-size: 0.8em;

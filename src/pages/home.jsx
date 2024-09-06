@@ -15,7 +15,7 @@ export default function Home() {
         <div className=" max-w-md mx-auto h-[calc(100vh_-_60vh)] ">
           <ThreeScene />
         </div>
-        <div className="px-6 py-4 max-w-md mx-auto bg-[#ffffff5c] backdrop-blur-md rounded-xl flex items-center justify-center text-center dark:text-white">
+        <div className="px-6 py-4 max-w-md mx-auto bg-[#ffffff5c] dark:bg-[#ffffff14] backdrop-blur-md rounded-xl flex items-center justify-center text-center dark:text-white">
           <p>¡Hola! Soy carlos, un programador web de México</p>
         </div>
         <div className="max-w-md mx-auto my-4">
@@ -34,7 +34,7 @@ export default function Home() {
         <div className=" max-w-md mx-auto flex justify-center p-4">
           <a
             href="/Proyectos"
-            className="cursor-pointer bg-verdeazul hover:bg-[#083D56] dark:bg-verdeazulclaro text-white transition-colors rounded-md px-2 py-2 "
+            className="cursor-pointer bg-verdeazul hover:bg-[#083D56] dark:bg-verdeazulclaro dark:hover:bg-rosapastel  text-white transition-colors rounded-md px-2 py-2 "
           >
             Mi portafolio {">"}
           </a>
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="space-y-4" >
 
             <a className=" block" href="">
-            <div className=" px-4 py-2 dark:bg-dark dark:text-white  bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-gray-400 ">
+            <div className=" px-4 py-2 dark:bg-dark dark:text-white  bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-borders dark:border-verdeazulclaro ">
                 <div className=" inline-flex items-center gap-4">
                   <img className="size-8" src={xube} alt=""/>
                   <div>    
@@ -58,7 +58,7 @@ export default function Home() {
             </a>
 
             <a className=" block" href={instescPdf} target="_blank" >
-            <div className=" px-4 py-2 dark:bg-dark dark:text-white bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-gray-400 ">
+            <div className=" px-4 py-2 dark:bg-dark dark:text-white bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-borders dark:border-verdeazulclaro ">
                 <div className=" inline-flex items-center gap-4">
                   <img className="size-8" src={intescLogo} alt=""/>
                   <div>    
@@ -71,7 +71,7 @@ export default function Home() {
             </a>
 
             <a className=" block" href="">
-            <div className=" px-4 py-2 dark:bg-dark dark:text-white  bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-gray-400 ">
+            <div className=" px-4 py-2 dark:bg-dark dark:text-white  bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-borders dark:border-verdeazulclaro  ">
                 <div className=" inline-flex items-center gap-4">
                   <img className="size-8" src={cufrisa} alt=""/>
                   <div>    

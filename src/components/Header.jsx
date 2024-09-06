@@ -41,11 +41,12 @@ export default function Header() {
                     <div className='flex flex-1 items-center gap-4 hidden lg:flex dark:text-white'>
                         <a 
                             href="/Proyectos" 
-                            className={`hover:underline underline-offset-4 p-2 ${location.pathname === '/Proyectos' ? 'bg-verdeazulclaro' : ''}`} >
+                            className={`hover:underline underline-offset-4 p-2 ${location.pathname === '/Proyectos' ? ' bg-rosapastel dark:bg-verdeazulclaro' : ''}`} >
                             Proyectos
                         </a>
                         
 
+                        <a href="https://www.github.com/carlosGT7274" target="_blank" >
                         <div className="button-icon border-[3px] border-white dark:border-[#222229] ">
                               <div className="icon bg-white dark:bg-[#222229] ">
                                 <FontAwesomeIcon icon={faGithub} />
@@ -55,6 +56,7 @@ export default function Header() {
                                     <span className="side top bg-[#222229] text-white dark:bg-white dark:text-[#222229]">carlosGT7274</span>
                              </div>
                         </div>
+                        </a>
 
 
                     </div>
