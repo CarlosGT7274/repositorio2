@@ -1,6 +1,6 @@
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
-import ThreeScene from "../lib/model.jsx";
+import { ThreeScene } from "../lib/model.jsx";
 
 import ecommerce from "../../public/images/ecomerce.png";
 import hr from "../../public/images/hr.jpg";

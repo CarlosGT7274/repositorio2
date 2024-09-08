@@ -1,4 +1,4 @@
-import ThreeScene from "../lib/model.jsx";
+import { FloatingLaptop, ThreeScene } from "../lib/model.jsx";
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -13,7 +13,8 @@ export default function Home() {
       <Header />
       <div className=" container mx-auto w-full lg:max-w-screen-md pt-14 px-4 ">
         <div className=" max-w-md mx-auto h-[calc(100vh_-_60vh)] ">
-          <ThreeScene />
+         <ThreeScene /> 
+          {/* }<FloatingLaptop /> */}
         </div>
         <div className="px-6 py-4 max-w-md mx-auto bg-[#ffffff5c] dark:bg-[#ffffff14] backdrop-blur-md rounded-xl flex items-center justify-center text-center dark:text-white">
           <p>¡Hola! Soy carlos, un programador web de México</p>
