@@ -1,124 +1,108 @@
+import * as THREE from "three";
+// import { OrbitControls } from "three-stdlib";
+import { Suspense, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { Html, Environment, OrbitControls, ContactShadows, useGLTF } from "@react-three/drei";
 
-import React, { useRef, useEffect } from 'react';
-import * as THREE from 'three';
-import { Canvas, useThree } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { ThreeMFLoader } from 'three-stdlib';
+function Model(props) {
+  const group = useRef();
 
-function Scene() {
-  const { scene, camera, gl: renderer } = useThree();
-  const objectRef = useRef();
-  const groundRef = useRef();
+  const { nodes, materials } = useGLTF("/models/mac-draco.glb");
 
-  useEffect(() => {
-    // Configurar escena
-    scene.background = null;
-    scene.fog = new THREE.Fog(0xa0a0a0, 10, 500);
-
-    // Configurar cámara
-    camera.position.set( - 50, 40, 50); // Ajusta la posición de la cámara
-    camera.lookAt(0, 0, 0); // Asegúrate de que la cámara apunte al centro de la escena
-
-    // Configurar luces
-    const hemiLight = new THREE.HemisphereLight(0xffffff, 0x8d8d8d, 3);
-    hemiLight.position.set(0, 100, 0);
-    scene.add(hemiLight);
-
-    const dirLight = new THREE.DirectionalLight(0xffffff, 3);
-    dirLight.position.set(- 0, 40, 50); // Ajusta la posición de la luz
-    dirLight.castShadow = true;
-    dirLight.shadow.camera.top = 50;
-    dirLight.shadow.camera.bottom = -25;
-    dirLight.shadow.camera.left = -25;
-    dirLight.shadow.camera.right = 25;
-    dirLight.shadow.camera.near = 0.1;
-    dirLight.shadow.camera.far = 200;
-    dirLight.shadow.mapSize.set(1024, 1024);
-    scene.add(dirLight);
-
-    // Cargar modelo
-    const loader = new ThreeMFLoader();
-    loader.load('/models/truck.3mf', (object) => {
-      object.rotation.set(-Math.PI / 2, 0, 0); // z-up conversion
-
-      object.traverse((child) => {
-        if (child.isMesh) {
-          child.castShadow = true;
-        }
-      });
-
-      objectRef.current = object;
-
-      // Centrar el modelo en la escena
-      const boundingBox = new THREE.Box3().setFromObject(object);
-      const size = boundingBox.getSize(new THREE.Vector3());
-      const center = boundingBox.getCenter(new THREE.Vector3());
-
-      object.position.sub(center); // Mueve el modelo para centrarlo en la escena
-
-      scene.add(object);
-    });
-
-    // Crear suelo
-    const ground = new THREE.Mesh(
-      new THREE.PlaneGeometry(1000, 1000),
-      new THREE.MeshPhongMaterial({ color: 0xcbcbcb, depthWrite: false })
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime();
+    group.current.rotation.x = THREE.MathUtils.lerp(
+      group.current.rotation.x,
+      Math.cos(t / 2) / 20 + 0.25,
+      0.1,
     );
-    ground.rotation.x = -Math.PI / 2;
-    ground.position.y = 11;
-    ground.receiveShadow = true;
-    groundRef.current = ground;
-    //scene.add(ground);
+    group.current.rotation.y = THREE.MathUtils.lerp(
+      group.current.rotation.y,
+      Math.sin(t / 4) / 20,
+      0.1,
+    );
+    group.current.rotation.z = THREE.MathUtils.lerp(
+      group.current.rotation.z,
+      Math.sin(t / 8) / 20,
+      0.1,
+    );
+    group.current.position.y = THREE.MathUtils.lerp(
+      group.current.position.y,
+      (-2 + Math.sin(t / 2)) / 2,
+      0.1,
+    );
+  });
 
-    // Configurar renderer
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-    // Función de renderizado
-    function render() {
-      renderer.render(scene, camera);
-    }
-
-    // Función para manejar el cambio de tamaño de la ventana
-    function onWindowResize() {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      render();
-    }
-
-    // Agregar event listener para el cambio de tamaño de la ventana
-    window.addEventListener('resize', onWindowResize);
-
-    // Inicializar render
-    render();
-
-    // Cleanup function
-    return () => {
-      window.removeEventListener('resize', onWindowResize);
-      scene.remove(hemiLight);
-      scene.remove(dirLight);
-      scene.remove(objectRef.current);
-      scene.remove(groundRef.current);
-    };
-  }, [scene, camera, renderer]);
-
-  return null;
-}
-
-function ThreeScene() {
   return (
-    <Canvas camera={{ fov: 35, near: 1, far: 500 }}>
-      <Scene />
-      <OrbitControls
-        minDistance={50}
-        maxDistance={200}
-        enablePan={false}
-        target={[0, 0, 0]} 
+    <group ref={group} {...props} dispose={null}>
+      <group rotation-x={-0.425} position={[0, -0.04, 0.41]}>
+        <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
+          <mesh
+            material={materials.aluminium}
+            geometry={nodes["Cube008"].geometry}
+          />
+          <mesh
+            material={materials["matte.001"]}
+            geometry={nodes["Cube008_1"].geometry}
+          />
+          <mesh geometry={nodes["Cube008_2"].geometry}>
+            {/* Drei's HTML component can "hide behind" canvas geometry */}
+            <Html
+              className="content"
+              rotation-x={-Math.PI / 2}
+              position={[0, 0.05, -0.09]}
+              transform
+              occlude
+            >
+              <div
+                className="wrapper"
+                onPointerDown={(e) => e.stopPropagation()}
+              >
+                <div>
+                  holaaa
+                </div>
+              </div>
+            </Html>
+          </mesh>
+        </group>
+      </group>
+      <mesh
+        material={materials.keys}
+        geometry={nodes.keyboard.geometry}
+        position={[1.79, 0, 3.45]}
       />
-    </Canvas>
+      <group position={[0, -0.1, 3.39]}>
+        <mesh
+          material={materials.aluminium}
+          geometry={nodes["Cube002"].geometry}
+        />
+        <mesh
+          material={materials.trackpad}
+          geometry={nodes["Cube002_1"].geometry}
+        />
+      </group>
+      <mesh
+        material={materials.touchbar}
+        geometry={nodes.touchbar.geometry}
+        position={[0, -0.03, 1.2]}
+      />
+    </group>
   );
 }
 
-export default ThreeScene;
 
+export default function ThreeScene() {
+  return (
+  <Canvas camera={{ position: [-5, 0, -15], fov:55 }} >
+      <pointLight position={[10, 10, 10]} intensity={1.5} />
+      <Suspense fallback={null}>
+        <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
+          <Model />
+        </group>
+        <Environment preset="city" />
+      </Suspense>
+      <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
+      <OrbitControls enablePan={false} enableZoom={false} minPolarAngle={Math.PI / 2.2} maxPolarAngle={Math.PI / 2.2} />
+  </Canvas>
+  )
+}
