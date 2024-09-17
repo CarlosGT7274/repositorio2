@@ -10,10 +10,14 @@ export default {
             colors: {
                 dark: '#20202380',
                 light: '#E9EFE6',
-                verdeazul: '#141D2E',
-                verdeazulclaro: '#9A3955',
-                rosapastel: '#A95194',
+                primary: '#141D2E',
+                primaryDark: '#9A3955',
+                secondaryDark: '#A95194',
                 borders: '#19171C',
+                link: '#4361ee',
+                darklink: '#f20089',
+                badge: '#00640029',
+                badgetext: '#38b000'
             }
         },
   },
