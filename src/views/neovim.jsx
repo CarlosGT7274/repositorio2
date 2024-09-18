@@ -31,7 +31,7 @@ const Neovim = () => (
           <FontAwesomeIcon icon={faGreaterThan} size="2xs" />{"   "}
         </span>
         <h3 className=" dark:text-white text-xl mb-4 inline-block">
-          Neovim-
+          Neovim
         </h3>
       </div>
       <p className=" text-justify indent-4 dark:text-white ">
