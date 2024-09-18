@@ -46,7 +46,7 @@ const Home = () => (
         data-aos="fade-right"
         className="underline-offset-8 underline font-bold text-xl dark:text-white "
       >
-        Experiencia }
+        Experiencia 
       </h3>
 
       <div className="space-y-4">
