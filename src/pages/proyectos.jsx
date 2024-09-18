@@ -66,7 +66,7 @@ export default function Proyectos() {
           <div className=" grid lg:grid-cols-2 gap-6 ">
             <div className=" mb-6">
               <div className=" w-full text-center">
-                <a className=" relative cursor-pointer" href="">
+                <a className=" relative cursor-pointer" href="Proyectos/Neovim">
                   <img
                     src={nvim}
                     className=" rounded-xl w-full h-auto object-cover"

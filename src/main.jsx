@@ -11,8 +11,10 @@ import Proyectos from './pages/proyectos.jsx'
 
 import Ecommerce from './views/ecommerce.jsx'
 import RhSistem from './views/rhsistem.jsx'
+import Neovim from './views/neovim.jsx'
 
 import './index.css'
+import Layout from './components/layout/layout.jsx';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
   {
     path: "/Proyectos/rh",
     element: <RhSistem />  
+  },
+  {
+    path: "/Proyectos/Neovim",
+    element: <Neovim />
   }
 ]);
 

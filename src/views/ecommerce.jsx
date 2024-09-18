@@ -30,7 +30,7 @@ export default function Ecommerce() {
             </span>
             <h3 className=" dark:text-white text-xl mb-4 inline-block">E-commerce</h3>
           </div>
-          <p className=" dark:text-white" >Creé una aplicación de comercio electrónico FULLSTACK React que sea totalmente responsiva con el pago Stripe</p>
+          <p className=" text-justify indent-4 dark:text-white " >Creé una aplicación de comercio electrónico FULLSTACK React que sea totalmente responsiva con el pago Stripe</p>
           <ul className=" ml-4 my-4 " >
             <li>
               <span className="bg-badge text-badgetext uppercase text-sm font-bold px-2 py-1 mr-2 ">

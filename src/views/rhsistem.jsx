@@ -25,7 +25,7 @@ const RhSistem = () => (
           Sistema RH
         </h3>
       </div>
-      <p className=" dark:text-white" >Desarrollo de un sistema de Recursos Humanos para restaurantes, enfocado en la gestión eficiente de personal, control de horarios, cálculo de nóminas, seguimiento de asistencias y evaluaciones de desempeño, optimizado para facilitar la administración y mejorar la productividad en el sector gastronómico.</p>
+      <p className=" text-justify indent-4 dark:text-white " >Desarrollo de un sistema de Recursos Humanos para restaurantes, enfocado en la gestión eficiente de personal, control de horarios, cálculo de nóminas, seguimiento de asistencias y evaluaciones de desempeño, optimizado para facilitar la administración y mejorar la productividad en el sector gastronómico.</p>
       <ul className=" ml-4 my-4 " >
         <li>
           <span className="bg-badge text-badgetext uppercase text-sm font-bold px-2 py-1 mr-2 ">
