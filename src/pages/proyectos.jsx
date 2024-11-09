@@ -30,7 +30,7 @@ export default function Proyectos() {
       imagen: crud,
       titulo: "Stock System",
       descripcion: "Sistema de gestión de inventarios.",
-      enlace: "#",
+      enlace: "stock",
     },
   ];
 
@@ -82,7 +82,7 @@ export default function Proyectos() {
 
             <div className=" mb-6">
               <div className=" w-full text-center">
-                <a className=" relative cursor-pointer" href="">
+                <a className=" relative cursor-pointer" href="Proyectos/dotfiles">
                   <img
                     src={dotfiles}
                     className=" rounded-xl w-full h-auto object-cover"

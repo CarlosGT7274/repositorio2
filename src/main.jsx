@@ -12,9 +12,11 @@ import Proyectos from './pages/proyectos.jsx'
 import Ecommerce from './views/ecommerce.jsx'
 import RhSistem from './views/rhsistem.jsx'
 import Neovim from './views/neovim.jsx'
+import Dotfiles from './views/dotfiles.jsx';
 
 import './index.css'
 import Layout from './components/layout/layout.jsx';
+import Stocksystem from './views/stocksystem.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
   {
     path: "/Proyectos/Neovim",
     element: <Neovim />
+  },
+  {
+    path: "/Proyectos/dotfiles",
+    element: <Dotfiles />
+  },
+  {
+    path: "/Proyectos/stock",
+    element: <Stocksystem />
   }
 ]);
 

@@ -14,10 +14,24 @@ import { a as three } from "@react-spring/three";
 import { a as web } from "@react-spring/web";
 // import { document } from "postcss";
 
-function Model(props) {
+function Spinner() {
+  return (
+    <div className="flex justify-center items-center h-full">
+      <div className="w-28 h-28 border-8 text-blue-400 text-4xl animate-spin border-gray-300 flex items-center justify-center border-t-blue-400 rounded-full"></div>
+    </div>
+  );
+}
+
+function Model({ onLoaded, ...props }) {
   const group = useRef();
 
   const { nodes, materials } = useGLTF("/models/mac-draco.glb");
+
+  useEffect(() => {
+    if (nodes && materials && onLoaded) {
+      onLoaded(); // Llamar a onLoaded cuando el modelo ha cargado
+    }
+  }, [nodes, materials, onLoaded]);
 
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
@@ -188,23 +202,34 @@ function OpenClose({ open, hinge, ...props }) {
 }
 
 function ThreeScene() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoaded = () => {
+    setIsLoading(false);
+  };
+
   return (
-    <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
-      <pointLight position={[10, 10, 10]} intensity={1.5} />
-      <Suspense fallback={null}>
-        <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
-          <Model />
-        </group>
-        <Environment preset="city" />
-      </Suspense>
-      <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
-      <OrbitControls
-        enablePan={false}
-        enableZoom={false}
-        minPolarAngle={Math.PI / 2.2}
-        maxPolarAngle={Math.PI / 2.2}
-      />
-    </Canvas>
+    <div className="relative w-full h-[300px]">
+      {isLoading && (
+          <Spinner />
+      )}
+      <Canvas camera={{ position: [-5, 0, -15], fov: 55 }}>
+        <pointLight position={[10, 10, 10]} intensity={1.5} />
+        <Suspense fallback={null}>
+          <group rotation={[0, Math.PI, 0]} position={[0, 1, 0]}>
+            <Model onLoaded={handleLoaded} />
+          </group>
+          <Environment preset="city" />
+        </Suspense>
+        <ContactShadows position={[0, -4.5, 0]} scale={20} blur={2} far={4.5} />
+        <OrbitControls
+          enablePan={false}
+          enableZoom={false}
+          minPolarAngle={Math.PI / 2.2}
+          maxPolarAngle={Math.PI / 2.2}
+        />
+      </Canvas>
+    </div>
   );
 }
 
