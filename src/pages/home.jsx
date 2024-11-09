@@ -16,11 +16,9 @@ const Home = () => (
       {/* }<FloatingLaptop /> */}
     </div>
     <div className="px-6 py-4 max-w-md mx-auto bg-[#ffffff5c] dark:bg-[#ffffff14] backdrop-blur-md rounded-xl flex items-center justify-center text-center dark:text-white">
-      <p>¡Hola! Soy carlos, un programador web de México</p>
+      <p>¡Hola! Soy carlos, un Desarrollador de software de México</p>
     </div>
-    <div className="max-w-md mx-auto my-4 dark:text-white">
-      <h3 className="text-4xl font-bold">Carlos Gonzanlez</h3>
-    </div>
+    
     <div className="max-w-md mx-auto my-4">
       <h1
         data-aos="fade-right"

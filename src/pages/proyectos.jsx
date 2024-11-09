@@ -3,7 +3,7 @@ import { ThreeScene } from "../lib/model.jsx";
 
 import ecommerce from "../../public/images/ecommerce.png";
 import hr from "../../public/images/hr.png";
-import crud from "../../public/images/crud.png";
+import crud from "../../public/images/cufrisa1.png";
 
 import nvim from "../../public/images/nvim.png";
 import dotfiles from "../../public/images/dotfiles.png";
@@ -28,8 +28,8 @@ export default function Proyectos() {
     {
       id: 3,
       imagen: crud,
-      titulo: "Stock System",
-      descripcion: "Sistema de gestión de inventarios.",
+      titulo: "CUFRISA",
+      descripcion: "Pagina Web",
       enlace: "stock",
     },
   ];
