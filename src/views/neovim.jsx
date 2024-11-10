@@ -53,10 +53,10 @@ const Neovim = () => (
             Sitio
           </span>
           <a
-            href="https://github.com/CarlosGT7274/HR-system"
+            href="https://github.com/CarlosGT7274/nvim"
             className="text-link dark:text-darklink hover:underline underline-offset-4"
           >
-            {"https://github.com/CarlosGT7274/HR-system"}
+            {"https://github.com/CarlosGT7274/nvim"}
             <FontAwesomeIcon icon={faUpRightFromSquare} size="sm" />
           </a>
         </li>
