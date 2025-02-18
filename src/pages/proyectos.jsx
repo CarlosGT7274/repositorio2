@@ -73,7 +73,7 @@ export default function Proyectos() {
                   />
                   <h3 className="dark:text-white text-xl mt-2">Neovim</h3>
                   <p className="dark:text-white text-sm">
-                    Mi IDE para Neovim con configuraciones insanas.
+                    Mi IDE para Neovim con configuraciones indispensables.
                     Completamente gratuito y impulsado por la comunidad.
                   </p>
                 </a>

@@ -8,6 +8,7 @@ import instescPdf from "../../public/pdf/Carta de recomendacion.pdf";
 import xubePdf from "../../public/pdf/Carta_recomendación_xube.pdf";
 import xube from "../../public/images/xube-modified.png";
 import cufrisa from "../../public/images/cufrisa logo.webp";
+import cufrisapdf from "../../public/pdf/carta de recomendacion cufrisa.pdf"
 
 const Home = () => (
   <Layout>
@@ -77,7 +78,7 @@ const Home = () => (
           </div>
         </a>
 
-        <a className=" block" href="">
+        <a className=" block" href={cufrisapdf} target="_blank">
           <div className=" px-4 py-2 dark:bg-dark dark:text-white  bg-white rounded-full items-center lg:rounded-full flex lg:inline-flex gap-4  w-full justify-between border border-borders dark:border-primaryDark  ">
             <div className=" inline-flex items-center gap-4">
               <img className="size-8" src={cufrisa} alt="" />
